@@ -1,0 +1,329 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+    <style>
+        /* 我将玫瑰藏于身后 也将喜欢藏于心底 从此以后 玫瑰和你都不可提及 */
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <title>如何提高至少 30% 的网站安全指数（迫真 - 低潮鲸鸣</title>
+    <link rel="dns-prefetch" href="https://fonts.loli.net/">
+    <link rel="dns-prefetch" href="https://gstatic.loli.net/">
+    <meta name="author" content="寒山">
+    <meta name="description" content="最近刚换了雨云的 CDN，理论上是加了点速度，毕竟 Azure 加持。正好兴趣大发，说说我认为在当今站点中，我们该如何保障自己的网站安全。">
+    <meta property="og:title" content="如何提高至少 30% 的网站安全指数（迫真 - 低潮鲸鸣">
+    <meta property="og:description" content="最近刚换了雨云的 CDN，理论上是加了点速度，毕竟 Azure 加持。正好兴趣大发，说说我认为在当今站点中，我们该如何保障自己的网站安全。">
+    <meta property="og:site_name" content="如何提高至少 30% 的网站安全指数（迫真 - 低潮鲸鸣">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://staticweb.awa.ink/archives/safe30/">
+    <meta property="og:image" content="https://staticweb.awa.ink/images/blog/posts/safe30/cover.png">
+    <meta property="article:published_time" content="2021-01-28T13:40:00+08:00">
+    <meta property="article:modified_time" content="2023-07-20T22:03:57+08:00">
+    <meta name="generator" content="Typecho 1.2/18.1.29">
+<meta name="template" content="VOID">
+<link rel="alternate" type="application/rss+xml" title="如何提高至少 30% 的网站安全指数（迫真 &raquo; 低潮鲸鸣 &raquo; RSS 2.0" href="https://staticweb.awa.ink/feed/archives/safe30/">
+<link rel="alternate" type="application/rdf+xml" title="如何提高至少 30% 的网站安全指数（迫真 &raquo; 低潮鲸鸣 &raquo; RSS 1.0" href="https://staticweb.awa.ink/feed/rss/archives/safe30/">
+<link rel="alternate" type="application/atom+xml" title="如何提高至少 30% 的网站安全指数（迫真 &raquo; 低潮鲸鸣 &raquo; ATOM 1.0" href="https://staticweb.awa.ink/feed/atom/archives/safe30/">
+<link rel="stylesheet" href="../../assets/blog/plugins/BracketDown/default.css">
+
+    <!--CSS-->
+
+    <link rel="stylesheet" href="../../usr/themes/VOID/assets/bundle-1e9bf597b1.css">
+    <link rel="stylesheet" href="../../usr/themes/VOID/assets/VOID-85f5618f4c.css">
+    <link rel="stylesheet" href="../../usr/themes/VOID/assets/snackbar.css">
+
+
+
+    <!--JS-->
+    <script src="../../usr/themes/VOID/assets/bundle-header-25184848f0.js"></script>
+    <link href="../../usr/themes/VOID/assets/icon/remixicon.css" rel="stylesheet">
+
+    <script>
+    VOIDConfig = {
+        PJAX : true,
+        searchBase : "https://staticweb.awa.ink/search/",
+        home: "https://staticweb.awa.ink/",
+        buildTime : "2020-10-31T12:00",
+        enableMath : false,
+        lazyload : true,
+        colorScheme:  0,
+        headerMode: 0,
+        followSystemColorScheme: true,
+        VOIDPlugin: true,
+        votePath: "https://staticweb.awa.ink/action/void?",
+        lightBg: "",
+        darkBg: "",
+        lineNumbers: true,
+        darkModeTime: {
+            'start': 18,
+            'end': 6        },
+        horizontalBg: false,
+        verticalBg: false,
+        indexStyle: 0,
+        version: 3.51,
+        isDev: true
+    }
+    </script>
+
+    <script src="../../usr/themes/VOID/assets/header-dba1d6f214.js"></script>
+    
+        <style>
+                @media screen and (min-width: 768px){
+            main>.lazy-wrap{min-height: 100vh;}
+        }
+        
+                @media screen and (max-width: 768px){
+            main>.lazy-wrap{min-height: 30vh;}
+        }
+            </style>
+
+        <style>
+    @font-face {
+        font-family: "BrandFont";
+        src: url("../../usr/themes/VOID/assets/sites-new.ttf");
+    }
+    .brand {
+        font-family: BrandFont, sans-serif;
+        font-style: !important;
+        font-weight: normal!important;
+    }
+    </style>
+    
+    <link href="../../css-OpenSans300400700_swap.css" rel="stylesheet">
+           <link id="stylesheet_noto" href="../../css-NotoSerifSC300400700_swap_chinese-simplified.css" rel="stylesheet">
+    
+            <link href="../../css-FiraCode_swap.css" rel="stylesheet">
+        <style>.yue code, .yue tt {font-family: "Fira Code", Menlo, Monaco, Consolas, "Courier New", monospace}</style>
+    <link rel="stylesheet" type="text/css" href="../../usr/themes/VOID/assets/snackbar.min.css">
+    </head>
+<body fontsize="3" class=" macStyleCodeBlock line-numbers serif lazyload-img">
+    
+    <header class="header-mode-0 ">
+         <div class="container wider">
+            <nav>
+                <a role="button" aria-label="展开导航" class="toggle" target="_self" href="javascript:void(0);" onclick="VOID_Ui.toggleNav(this);">
+                    <span></span>
+                </a>
+                <a class="brand" href="../../index.html">祈り</a>
+                <a href="../../index.html"><i class="ri-home-4-line" style="padding-right: 5px;"></i>博客首页</a>
+                <span class="dropdown"><i class="ri-inbox-fill" style="padding-right: 5px;"></i>文章分类
+                    <ul>
+                        <li><a href="../../category/daily/index.html">生活随笔</a></li><li><a href="../../category/noob/index.html">技术研讨</a></li><li><a href="../../category/share/index.html">资源分享</a></li>                    </ul>
+                    
+                </span>
+                
+                
+                <a href="../../daily/index.html" target="_blank"><i class="ri-sticky-note-line" style="padding-right: 5px;"></i>诗和她</a><a href="../index.html"><i class="ri-file-copy-2-fill" style="padding-right: 5px;"></i>文章归档</a>                             
+ <a target="_self" href="../../me/index.html"><i class="ri-emotion-line" style="padding-right: 5px;"></i>你所见的我</a>
+
+                
+          
+                               
+                               
+    </nav></div></header>
+    <div id="nav-mobile">
+        <section id="pages" data-title="PAGES">
+            <nav>
+                <a href="../../daily/index.html">独白</a><a href="../../me/index1.html">我啊</a><a href="../index.html">文章归档</a>            </nav>
+        </section>
+        <section id="categories" data-title="CATEGORIES">
+            <nav>
+                <a href="../../category/daily/index.html">生活随笔</a><a href="../../category/noob/index.html">技术研讨</a><a href="../../category/share/index.html">资源分享</a>            </nav>
+        </section>
+            </div>
+<main id="pjax-container">
+    <title hidden="">
+        如何提高至少 30% 的网站安全指数（迫真 - 低潮鲸鸣    </title>
+
+    
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "低潮鲸鸣",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://gravatar.loli.net/avatar/b04e176c7fa8a7bfb5ccc688243c88be?s=200&amp;r=&amp;d="
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "寒山",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://gravatar.loli.net/avatar/b04e176c7fa8a7bfb5ccc688243c88be?s=400&amp;r=&amp;d=",
+            "width": 400,
+            "height": 400
+        },
+        "url": "https://staticweb.awa.ink/author/1/"
+    },
+    "headline": "如何提高至少 30% 的网站安全指数（迫真 - 低潮鲸鸣",
+    "url": "https://staticweb.awa.ink/archives/safe30/",
+    "datePublished": "2021-01-28T13:40:00+08:00",
+    "dateModified": "2023-07-20T22:03:57+08:00",
+    "image": {
+        "@type": "ImageObject",
+                "url": "https://staticweb.awa.ink/images/blog/posts/safe30/cover.png"
+    },
+    "description": "最近刚换了雨云的 CDN，理论上是加了点速度，毕竟 Azure 加持。正好兴趣大发，说说我认为在当今站点中，我们该如何保障自己的网站安全。",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://staticweb.awa.ink/"
+    }
+}
+</script>
+
+    
+<div class="lazy-wrap
+     loading dark">
+
+            <div id="banner" class="">
+                        <img class="lazyload" data-src="https://staticweb.awa.ink/images/blog/posts/safe30/cover.png">
+        </div>
+        <script>$('body>header').removeClass('force-dark').removeClass('no-banner');</script>
+    
+            <div class="banner-title">
+            
+            <h1 class="post-title">
+                                    如何提高至少 30% 的网站安全指数（迫真                            </h1>       
+
+                            <p class="post-meta">
+                                            <span>
+                        <i class="ri-rest-time-line" style="padding-right: 5px;"></i> <time datetime="2021-01-28T13:40:00+08:00">2021-01-28</time>
+                                                                    &nbsp;•&nbsp; <i class="ri-file-warning-line" style="padding-right: 5px;"></i> 修改于 33 天前
+                        &nbsp;•&nbsp;<i class="ri-discuss-line" style="padding-right: 5px;"></i> <a no-pjax="" target="_self" href="javascript:void(0);" onclick="VOID_SmoothScroller.scrollTo('#comments', -60)">6&nbsp;评论</a>
+                        &nbsp;•&nbsp;<span> <i class="ri-focus-3-line" style="padding-right: 5px;"></i>592&nbsp;阅读</span>                        
+                                                            </span></p>
+                        
+
+            
+        </div>
+        
+</div>
+
+    
+    <div class="wrapper container">
+        <div class="contents-wrap"> <!--start .contents-wrap-->
+            <section id="post" class="float-up">
+                <article class="post yue">
+
+                  
+
+                    <div class="articleBody" class="full">
+                        
+                <!--<div align="center">
+
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=&auto=0&height=66"></iframe>
+</div>-->
+                            
+                        <p>最近刚换了雨云的 CDN，理论上是加了点速度，毕竟 Azure 加持。正好兴趣大发，说说我认为在当今站点中，我们该如何保障自己的网站安全。</p><!--more--><h1>站点安全</h1><p>站点是一个常常容易被人入手的选项，红队实战中也经常会有从各个站点逐级击破再到拿下服务器的操作。更别提 scriptkiddle 拿着工具就是冲的了，所以我们应该从站点方面做一下基础安全。</p><h3 id="toc_0">加装 WAF</h3><p>WAF （网站应用级入侵防御系统）可以有效地阻挡一些非法操作，下面附上一张我在用宝塔面板的 Nginx-WAF 模块功能。<br><figure><a class="lazyload-container" no-pjax="" data-fancybox="gallery" data-caption="宝塔 WAF" href="../../images/blog/posts/safe30/1.png"><img class="lazyload" alt="宝塔 WAF" data-src="https://staticweb.awa.ink/images/blog/posts/safe30/1.png" src=""></a></figure><br><figure><a class="lazyload-container" no-pjax="" data-fancybox="gallery" data-caption="宝塔 WAF" href="../../images/blog/posts/safe30/2.png"><img class="lazyload" alt="宝塔 WAF" data-src="https://staticweb.awa.ink/images/blog/posts/safe30/2.png" src=""></a></figure><br>但是WAF总有办法可以绕过，所以这个办法只能拦得住大部分的脚本小子。</p><h3 id="toc_1">加密主要文件</h3><p>这是我今天悟出来的神奇方法。如果你站点沦陷的时候，对方试图通过配置文件拿下有关服务器时，就会发现这破事文件完全打不开。</p><p><figure><a class="lazyload-container" no-pjax="" data-fancybox="gallery" data-caption="加密文件" href="../../images/blog/posts/safe30/3.png"><img class="lazyload" alt="加密文件" data-src="https://staticweb.awa.ink/images/blog/posts/safe30/3.png" src=""></a></figure></p><p>当然，加密后效果是完全不变的。这也同样能挡住大部分会点技术的脚本小子。不过还请记住，PHP 文件同样是可以被解密的，我现在使用的加密一个月会更新一次算法，最大程度保证完全加密，有兴趣的可以自行百度，你会看得到与我这段话内容中相同描述部分的。</p><p><del>为了防止恼羞成怒的大黑客导致源文件丢失我还特意备份到度盘了</del></p><h3 id="toc_2">使用正版软件并保持更新</h3><p>相信我，更新不会错。<br>相信我，正版有保障。<br>相信我，氪金是好事。</p><hr><h1>服务器安全</h1><p>站点寄托于服务器上，当服务器被攻陷后，搭建在服务器上的所有站点将会处于水深火热之中。</p><h3 id="toc_3">使用跳板服务器&白名单</h3><p>如题，使用跳板服务器或者白名单可以限制住来自其他的外源 ip。<br>当服务器被攻陷，只有跳板服务器和白名单设置的ip可以访问服务器，这个功能很多服务都有，可以去开启一下。别人除了往你电脑挂马搞本地代理外么的任何方法可以解限。</p><h3 id="toc_4">使用 CDN 服务</h3><p>使用 CDN 服务可以阻隔住泄露源站 ip 的可能性，当然一些特殊手段还是可以获取得到的，这个方法只能说是通杀大部分的脚本小子了</p><hr><h1>万能方法</h1><p>域名进行 icp 备案和网安备案 做好信息正确保证<br>使用国内正规服务器 完全裸奔状态 禁止国外访问</p><p>这样 当你被黑的时候就可以快快乐乐的找警察蜀黍了</p>                    </div>
+                    
+                    
+
+                </article>
+
+                <script>
+                (function () {
+                    $.each($('iframe'), function(i, item){
+                        var src = $(item).attr('src');
+                        if (typeof src === 'string' && src.indexOf('player.bilibili.com') > -1) {
+                            // $(item).addClass('bili-player');
+                            if (src.indexOf('&high_quality') < 0) {
+                                src += '&high_quality=1'; // 启用高质量
+                                $(item).attr('src', src);
+                            }
+                            $(item).wrap('<div class="bili-player"></div>');
+                        }
+                    });
+                })();
+                </script>
+
+                <!--分页-->
+                                <div class="post-pager">                                            <div class="prev">
+                            <a href="../qb-api/index.html"><h2>玩个大的，聚合 QQ 绑定查询 API 原理共享</h2></a>
+                            <p>最近 QQ 的八亿数据库被各大站长做成可供查询的 API，造福了广大人民群众。虽然都是，这些 API 总会有一些白名单，今天我们来做个多聚合程序，把他给赣了。</p>                        </div>
+                                                                <div class="next">
+                            <a href="../new-domain-o0work/index.html"><h2>注册了个 o0.work</h2></a>
+                            <p>突然来了兴趣扫到的，不知道干点什么，暂定。</p>                        </div>
+                                    </div>
+                            </section>
+        </div> <!--end .contents-wrap-->
+        <!--目录，可选-->
+            </div>
+    <!--评论区，可选-->
+        
+
+</main>
+        <footer>
+           <div id="hitokoto_text" style="display: none;">&nbsp;</div>
+            <div class="container wide">
+                <section>
+
+                    <p>© 2023  低潮鲸鸣 全站总记录3.23 W 字</p>
+                    <p>我在等风也在等你：<span id="uptime"></span> </p>
+                </section>
+                <section>
+              
+                    <p><a href="https://github.com/typecho/typecho">Typecho</a> & <a href="https://github.com/AlanDecode/Typecho-Theme-VOID">VOID</a> • <a href="https://xiaolii.com/%e9%9a%90%e7%a7%81%e6%94%bf%e7%ad%96__trashed/privacy-policy">Privacy Policy</a> • <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a></p>
+                    <p><a href="https://beian.miit.gov.cn" target="_blank" rel="external nofollow">闽ICP备2023000724号-1</a> | <a target"_blank"="" href="https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=35021202000575" rel="external nofollow">闽公网安备 35021202000575号</a></p>
+                </section>
+            </div>
+        </footer>
+
+        <!--侧边控制按钮-->
+        <aside id="ctrler-panel">
+            <div class="ctrler-item" id="go-top">
+                <a target="_self" aria-label="返回顶部" href="javascript:void(0);" style="transform: translateX(-2px);" onclick="VOID_SmoothScroller.scrollTo(0);"><i class="voidicon-up"></i></a>
+            </div>
+            
+           
+
+        <!--站点设置面板-->
+      
+
+
+
+
+
+
+      
+        <script data-manual="" src="../../usr/themes/VOID/assets/bundle-b514182550.js"></script>
+                <script src="../../assets/blog/themes/VOID/VOID-2c818e2660.js"></script>
+        <script>
+        if($(".OwO").length > 0){
+            new OwO({
+                logo: 'OωO',
+                container: document.getElementsByClassName('OwO')[0],
+                target: document.getElementsByClassName('input-area')[0],
+                api: 'https://staticweb.awa.ink/usr/themes/VOID/assets/libs/owo/OwO_02.json',
+                position: 'down',
+                width: '400px',
+                maxHeight: '250px'
+            });
+        }
+        </script>
+                <script>
+            $(document).on('pjax:complete',function(){
+                fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      const hitokoto = document.querySelector('#hitokoto_text')     
+      hitokoto.innerText = data.hitokoto
+ })
+    .catch(console.error)
+            })
+                    </script>
+<script src="../../usr/themes/VOID/assets/sweetalert.js"></script>
+<script>document.body.oncopy = function(){Swal.fire({allowOutsideClick:false,type:'success',title: '复制成功,如转载请注明出处！',showConfirmButton: false,timer: 2000});};
+</script>
+<script src="../../usr/themes/VOID/assets/snackbar.js"></script>
+<script src="../../usr/themes/VOID/assets/iyuan.js"></script>
+
+
+                <script src="../../assets/blog/plugins/BracketDown/details-element-polyfill.js"></script>    </aside></body>
+</html>

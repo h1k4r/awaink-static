@@ -1,0 +1,1 @@
+(function hitokoto(){var hitokoto="知我者，谓我心忧；不知我者，谓我何求。";var dom=document.querySelector('#hitokoto');Array.isArray(dom)?dom[0].innerText=hitokoto:dom.innerText=hitokoto;})()
